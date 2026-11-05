@@ -1,0 +1,23 @@
+============================= test session starts ==============================
+platform linux -- Python 3.12.3, pytest-9.2.0, pluggy-1.7.0 -- /usr/bin/python
+cachedir: .pytest_cache
+rootdir: /home/claude/proj
+configfile: pyproject.toml
+plugins: platformdirs-4.13.0, cov-7.1.0
+collecting ... collected 1 item
+
+tests/test_order.py::test_cannot_confirm_twice FAILED                    [100%]
+
+=================================== FAILURES ===================================
+__________________________ test_cannot_confirm_twice ___________________________
+
+    def test_cannot_confirm_twice():
+        order = Order(100)
+        order.confirm()
+>       with pytest.raises(ValueError, match="already confirmed"):
+E       Failed: DID NOT RAISE ValueError
+
+tests/test_order.py:24: Failed
+=========================== short test summary info ============================
+FAILED tests/test_order.py::test_cannot_confirm_twice - Failed: DID NOT RAISE...
+============================== 1 failed in 0.02s ===============================
